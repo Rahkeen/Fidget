@@ -88,8 +88,8 @@ fun SpringyFidgetCard() {
 
     Log.d("Fidget", "$centerXOffset, $centerYOffset")
 
-    val transformedX = transformOffsetToRotationValue(size.width.toFloat(), 4F, centerXOffset)
-    val transformedY = transformOffsetToRotationValue(size.height.toFloat(), 10F, centerYOffset)
+    val transformedX = transformOffsetToRotationValue(size.width.toFloat(), 20F, centerXOffset)
+    val transformedY = transformOffsetToRotationValue(size.height.toFloat(), 20F, centerYOffset)
 
     return Offset(transformedX, transformedY)
   }
@@ -174,8 +174,8 @@ fun FidgetCard() {
             y = centroid.y.coerceIn(0F, height)
           )
           val tapOffset = translateOffsetToCenterOrigin(width, height, coercedOffset)
-          transformAngleY = calculateTransformationOutput(width, 10F, tapOffset.x)
-          transformAngleX = calculateTransformationOutput(height, 10F, -tapOffset.y)
+          transformAngleY = calculateTransformationOutput(width, width, tapOffset.x)
+          transformAngleX = calculateTransformationOutput(height, height, -tapOffset.y)
         }
       },
     contentAlignment = Alignment.Center
